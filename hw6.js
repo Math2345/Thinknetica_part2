@@ -13,13 +13,14 @@ const human = Object.create({}, {
     dateOfBith: {
         set: function (date) {
             this.age = ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000));
+            this.dateOfMyBith = date;
         },
 
         get: function () {
-            return Math.floor(this.age);
+            return this.dateOfMyBith;
         }
     }
-})
+});
 
 
 human.fullName = 'Max Hramtsoff';
